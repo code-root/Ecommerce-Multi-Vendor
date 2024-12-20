@@ -90,6 +90,10 @@
                                             <h6 class="web-text-primary">{{$seller['products_count'] < 1000 ? $seller['products_count'] : number_format($seller['products_count']/1000 , 1).'K'}}</h6>
                                             <span>{{ translate('products') }}</span>
                                         </div>
+                                        <!-- QR Code Button -->
+                                        <div class="info-item" onclick="showPopup('{{ route('shopView',['id'=> $seller['id']]) }}')" style=" font-size: 17px !important">
+                                            <i class="tio-qr-code text-star mx-1"></i>
+                                        </div>
                                     </div>
                                 </a>
                             </div>
@@ -115,4 +119,102 @@
             </section>
         </div>
     </div>
+
+    <!-- Popup -->
+    <div class="popup-overlay" id="qrPopup">
+        <div class="popup-content">
+            <h5>Share this QR Code</h5>
+            <div id="qrCodeContainer" style="margin-bottom: 20px;"></div>
+            <div class="social-share-buttons">
+                <a id="facebookShare" class="btn btn-sm btn-primary" target="_blank">Share on Facebook</a>
+                <a id="whatsappShare" class="btn btn-sm btn-success" target="_blank">Share on WhatsApp</a>
+                <a id="twitterShare" class="btn btn-sm btn-info" target="_blank">Share on Twitter</a>
+                <a id="downloadQR" class="btn btn-sm btn-secondary" download="qr-code.png">Download QR</a>
+            </div>
+            <button class="close-popup btn btn-danger mt-3" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        function showPopup(url) {
+            const qrCodeContainer = document.getElementById('qrCodeContainer');
+            qrCodeContainer.innerHTML = '';
+            event.preventDefault();
+
+            const qrCode = new QRCode(qrCodeContainer, {
+                text: url,
+                width: 150,
+                height: 150
+            });
+
+            setTimeout(() => {
+                const canvas = qrCodeContainer.querySelector('canvas');
+                const qrImageURL = canvas.toDataURL('image/png');
+
+                // Update social media links
+                document.getElementById('facebookShare').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                document.getElementById('whatsappShare').href = `https://wa.me/?text=${encodeURIComponent(url)}`;
+                document.getElementById('twitterShare').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=Check%20out%20this%20QR%20Code!`;
+
+                // Update download link
+                const downloadLink = document.getElementById('downloadQR');
+                downloadLink.href = qrImageURL;
+            }, 500);
+
+            document.getElementById('qrPopup').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('qrPopup').style.display = 'none';
+        }
+    </script>
+
+    <style>
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        .popup-content {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .popup-content h5 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #333;
+        }
+        .social-share-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .social-share-buttons a {
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            text-align: center;
+        }
+        .btn-primary { background-color: #4267B2; } /* Facebook */
+        .btn-success { background-color: #25D366; } /* WhatsApp */
+        .btn-info { background-color: #1DA1F2; } /* Twitter */
+        .btn-secondary { background-color: #6c757d; } /* Download */
+        .btn-danger { background-color: #dc3545; } /* Close */
+    </style>
 @endsection

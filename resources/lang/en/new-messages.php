@@ -8358,4 +8358,5 @@ return [
 	"removed_from_wishlist" => "Removed from wishlist",
 	"you_get_free_delivery_bonus" => "You get free delivery bonus",
 	"you_have_not_add_any_products_in_Wishlist " => "You have not add any products in Wishlist ",
+	"Show QR Code" => "Show QR Code",
 ];
