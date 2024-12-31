@@ -121,7 +121,7 @@
                                             <img class="rounded-full" alt="{{ translate('store') }}"
                                                  src="{{ getStorageImages(path: $vendorData->image_full_url, type: 'shop') }}">
                                         </div>
-                    
+
                                         @if($vendorData->temporary_close)
                                             <span class="temporary-closed position-absolute text-center rounded-full p-2">
                                                 <span>{{translate('Temporary_OFF')}}</span>
@@ -135,7 +135,7 @@
                                     <div class="info pt-2 d-flex align-items-center justify-content-between">
                                         <h5>{{ $vendorData->name }}</h5>
                                         <!-- QR Code Button -->
-                                      
+
                                     </div>
                                     <div class="d-flex align-items-center">
                                         <h6 class="web-text-primary">{{number_format($vendorData->average_rating,1)}}</h6>
@@ -156,9 +156,7 @@
                                         </h6>
                                         <span>{{ translate('products') }}</span>
                                     </div>
-                                    <div class="info-item" onclick="showPopup('{{ route('shopView',['id'=> $vendorData['id']]) }}')" style=" font-size: 17px !important">
-                                        <i class="tio-qr-code text-star mx-1"></i>
-                                    </div>
+
                                 </div>
                             </a>
                         @endforeach
@@ -204,7 +202,7 @@
             document.getElementById('facebookShare').href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
             document.getElementById('whatsappShare').href = `https://wa.me/?text=${encodeURIComponent(url)}`;
             document.getElementById('twitterShare').href = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=Check%20out%20this%20QR%20Code!`;
-            
+
             // Update download link
             const downloadLink = document.getElementById('downloadQR');
             downloadLink.href = qrImageURL;

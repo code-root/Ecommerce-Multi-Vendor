@@ -320,7 +320,7 @@ ol.breadcrumb {
     font-weight: 500;
     font-size: 16px;
     line-height: 19px;
-    color: #073b74;
+    color: #000000;
     border-radius: 50%;
     position: absolute;
     top: 50%;
@@ -333,7 +333,7 @@ ol.breadcrumb {
     font-weight: 700;
     font-size: 32px;
     line-height: 39px;
-    color: #073b74;
+    color: #000000;
     line-height: 1;
 }
 
@@ -587,7 +587,7 @@ ol.breadcrumb {
     margin: -75px 0 0 -75px;
     border-radius: 50%;
     border: 3px solid transparent;
-    border-top-color: #073b74;
+    border-top-color: #000000;
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
 }

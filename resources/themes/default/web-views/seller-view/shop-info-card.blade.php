@@ -81,8 +81,9 @@
                 </div>
             </div>
 
+
             <div class="d-flex align-items-center">
-                <div class="{{Session::get('direction') === "rtl" ? 'ml-sm-4' : 'mr-sm-4'}}">
+                <div class="{{Session::get('direction') === "rtl" ? 'ml-sm-1' : 'mr-sm-1'}}">
                     @if (auth('customer')->check())
                         <div class="d-flex">
                             @if($seller_id == 0)
@@ -133,6 +134,18 @@
                     @endif
 
                 </div>
+
+                             <!-- QR Code Icon -->
+                             <button class="btn btn--primary rounded-3 btn-sm text-capitalize" onclick="showPopup()" style="
+                             font-family: sans-serif;
+                             border-radius: 7px;
+                             width: 5rem;
+                             margin-right: 3%;
+                         ">                                <img src="{{theme_asset(path: 'public/assets/front-end/img/icons/qr-code.svg')}}" loading="eager" class="" alt="">
+                                <span class="d-none d-sm-inline-block">
+                                   Qr Code
+                                </span>
+                            </button>
             </div>
         </div>
     </div>

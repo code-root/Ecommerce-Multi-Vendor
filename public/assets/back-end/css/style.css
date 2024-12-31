@@ -97,7 +97,7 @@ a:hover {
 }
 
 .navbar-vertical-content {
-    background: #073b74;
+    background: #000000;
     padding: 10px 15px;
 }
 
@@ -144,7 +144,7 @@ a:hover {
         > .navbar-nav
         > .navbar-vertical-aside-has-menu
         > .nav {
-        background-color: #073b74;
+        background-color: #000000;
     }
 }
 .cmn--media {
@@ -5400,7 +5400,7 @@ select {
     position: sticky;
     top: 0;
     z-index: 9;
-    background: #073b74;
+    background: #000000;
 }
 
 aside .navbar-vertical-content {
