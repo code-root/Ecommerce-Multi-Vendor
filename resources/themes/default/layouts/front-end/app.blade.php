@@ -6,7 +6,7 @@
     <title>@yield('title')</title>
     <meta name="_token" content="{{csrf_token()}}">
 
-    <meta name="google-site-verification" content="{{getWebConfig('google_search_console_code')}}">
+    {{getWebConfig('google_search_console_code')}}
     <meta name="msvalidate.01" content="{{getWebConfig('bing_webmaster_code')}}">
     <meta name="baidu-site-verification" content="{{getWebConfig('baidu_webmaster_code')}}">
     <meta name="yandex-verification" content="{{getWebConfig('yandex_webmaster_code')}}">

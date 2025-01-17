@@ -8371,4 +8371,7 @@ return [
 	"to_review_offline_payment:_Go_to_Order_Details_page_>_view_Payment_Information_>_Match_the_payment_information" => "To review offline payment: Go to Order Details page   view Payment Information   Match the payment information",
 	"_have_good_reviews_&_sorted_alphabetically" => " have good reviews & sorted alphabetically",
 	"want_update_this_invoice_settings" => "Want update this invoice settings",
+	"the_vendor_product_list_is_for_displaying_the_products_which_are_mostly_ordered" => "The vendor product list is for displaying the products which are mostly ordered",
+	"If_only_the ‘Delivery_Available_Zip_Code_Area’ feature_is_enabled,_then_you’ll_be_able_to_deliver_on_all_the_zip_code_areas" => "If only the ‘Delivery Available Zip Code Area’ feature is enabled  then you’ll be able to deliver on all the zip code areas",
+	"invoice_logo" => "Invoice logo",
 ];
