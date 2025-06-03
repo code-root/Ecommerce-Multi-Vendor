@@ -31,28 +31,28 @@
                     <div class="p-4 border rounded mb-3">
                         <div class="row g-3">
                             <div class="col-md-4 col-xl-3">
-                                <img src="{{ dynamicAsset('public/assets/back-end/img/google-1.png') }}" alt="" width="30">
-                                <h4 class="m-0 mt-3">{{ translate('google_search_console') }}</h4>
+                                <img src="{{dynamicAsset('public/assets/back-end/img/google-1.png')}}" alt="" width="30">
+                                <h4 class="m-0 mt-3">{{translate('google_search_console')}}</h4>
                             </div>
                             <div class="col-md-8 col-xl-9">
-                                <!-- حقل النص لإدخال كود التحقق -->
-                                <textarea name="google_search_console_code" placeholder="{{ translate('enter_your_HTML_code_or_ID') }}" class="form-control">{{ $webMasterToolData['google_search_console_code'] }}</textarea>
+                                <input type="text" name="google_search_console_code"  value="{{$webMasterToolData['google_search_console_code']}}" placeholder="{{translate('enter_your_HTML_code_or_ID')}}" class="form-control">
                                 <div class="mt-10px fs-12">
-                                    <div>
-                                        {{ translate('Google_Console_verification_HTML_code_or_ID') }}.
-                                        {{ translate('learn_how_to_get') }}
-                                        <a href="https://cd-root.com/blog/webmaster-tools-verification/" target="_blank" class="text--primary text-underline font-weight-semibold text-capitalize">
-                                            {{ translate('search_console_verification_page') }}
+                                    <div>{{translate('Google_Console_verification_HTML_code_or_ID').'.'.translate('learn_how_to_get')}}
+                                        <a href="{{ 'https://cd-root.com/blog/webmaster-tools-verification/' }}"
+                                           target="_blank"
+                                           class="text--primary text-underline font-weight-semibold text-capitalize">
+                                            {{translate('search_console_verification_page')}}
                                         </a>
                                     </div>
                                 </div>
                                 <div class="mt-3">
-                             
+                                    <span class="badge badge-soft-danger p-2">
+                                        &lt;meta name= “google-site-verification” content=”your-id” /&gt;
+                                    </span>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                     <div class="p-4 border rounded mb-20px">
                         <div class="row g-3">
                             <div class="col-md-4 col-xl-3">

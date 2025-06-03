@@ -16,6 +16,7 @@
         <span class="order-stats__title">{{$orderStatus['confirmed']}}</span>
     </a>
 </div>
+
 <div class="col-sm-6 col-lg-3">
     <a class="order-stats order-stats_packaging" href="{{route('vendor.orders.list',['processing'])}}">
         <div class="order-stats__content">
@@ -25,6 +26,7 @@
         <span class="order-stats__title">{{$orderStatus['processing']}}</span>
     </a>
 </div>
+
 <div class="col-sm-6 col-lg-3">
     <a class="order-stats order-stats_out-for-delivery" href="{{route('vendor.orders.list',['out_for_delivery'])}}">
         <div class="order-stats__content">
